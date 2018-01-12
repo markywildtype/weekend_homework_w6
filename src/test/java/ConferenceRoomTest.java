@@ -10,7 +10,7 @@ public class ConferenceRoomTest {
 
     @Before
     public void before(){
-        conferenceRoom = new ConferenceRoom(0, 1, 150, "The White Room");
+        conferenceRoom = new ConferenceRoom(0, 1, 150, "The White Room", 200);
     }
 
     @Test
@@ -21,6 +21,11 @@ public class ConferenceRoomTest {
     @Test
     public void hasRoomName(){
         assertEquals("The White Room", conferenceRoom.getRoomName());
+    }
+
+    @Test
+    public void hasCapacity(){
+        assertEquals(200, conferenceRoom.getCapacity());
     }
 
 }

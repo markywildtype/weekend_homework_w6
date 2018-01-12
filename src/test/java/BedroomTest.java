@@ -1,3 +1,4 @@
+import clients.Guest;
 import org.junit.Before;
 import org.junit.Test;
 import rooms.Bedroom;
@@ -9,6 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class BedroomTest {
 
     Bedroom bedroom;
+    Guest guest;
+    Guest guest2;
 
     @Before
     public void before(){
@@ -27,6 +30,26 @@ public class BedroomTest {
 
     @Test
     public void bedroomStartsUnoccupied(){
+        assertEquals(Occupied.UNOCCUPIED, bedroom.getOccupiedStatus());
+    }
+
+    @Test
+    public void hasCapacity(){
+        assertEquals(1, bedroom.getRoomCapacity());
+    }
+
+    @Test
+    public void cannotAddGuestsBeyondCapacity(){
+        bedroom.addGuest(guest);
+        bedroom.addGuest(guest2);
+        assertEquals(1, bedroom.getGuestsCheckedIn().size());
+    }
+
+    @Test
+    public void removeFinalGuestsRevertsOccupiedStatus(){
+        bedroom.addGuest(guest);
+        assertEquals(Occupied.OCCUPIED, bedroom.getOccupiedStatus());
+        bedroom.removeGuest(guest);
         assertEquals(Occupied.UNOCCUPIED, bedroom.getOccupiedStatus());
     }
 

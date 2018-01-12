@@ -57,4 +57,14 @@ public class RoomTest {
         assertEquals(1, room.getGuestsCheckedIn().size());
     }
 
+    @Test
+    public void canRemoveAllGuests(){
+        room.addGuest(guest);
+        room.addGuest(guest2);
+        room.removeAllGuests();
+        assertEquals(0, room.getGuestsCheckedIn().size());
+        assertEquals(Occupied.UNOCCUPIED, room.getOccupiedStatus());
+
+    }
+
 }

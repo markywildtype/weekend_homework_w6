@@ -8,8 +8,8 @@ public class Room {
 
     private int floor;
     private int roomNumber;
-    private Occupied occupied = Occupied.UNOCCUPIED;
-    private ArrayList<Guest> guestsCheckedIn = new ArrayList<Guest>();
+    protected Occupied occupied = Occupied.UNOCCUPIED;
+    protected ArrayList<Guest> guestsCheckedIn = new ArrayList<Guest>();
 
     public Room(int floor, int roomNumber){
         this.floor = floor;
@@ -45,4 +45,9 @@ public class Room {
         return this.guestsCheckedIn;
     }
 
+    public void removeAllGuests() {
+        this.guestsCheckedIn.clear();
+        this.occupied = Occupied.UNOCCUPIED;
+
+    }
 }
