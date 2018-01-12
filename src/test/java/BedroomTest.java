@@ -24,6 +24,12 @@ public class BedroomTest {
     }
 
     @Test
+    public void canAlterNightlyRate(){
+        bedroom.setNightlyRate(85);
+        assertEquals(85, bedroom.getNightlyRate());
+    }
+
+    @Test
     public void hasOccupancyType(){
         assertEquals(Occupancy.SINGLE, bedroom.getOccupancyType());
     }

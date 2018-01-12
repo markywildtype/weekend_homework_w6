@@ -25,4 +25,7 @@ public class ConferenceRoom extends Room {
         return this.capacity;
     }
 
+    public void setHourlyRate(int newRate) {
+        this.hourlyRate = newRate;
+    }
 }

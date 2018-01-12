@@ -18,6 +18,10 @@ public class Bedroom extends Room {
         return this.nightlyRate;
     }
 
+    public void setNightlyRate(int newRate){
+        this.nightlyRate = newRate;
+    }
+
     public Occupancy getOccupancyType() {
         return this.occupancy;
     }

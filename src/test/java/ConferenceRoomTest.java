@@ -19,6 +19,12 @@ public class ConferenceRoomTest {
     }
 
     @Test
+    public void canAlterHourlyRate(){
+        conferenceRoom.setHourlyRate(200);
+        assertEquals(200, conferenceRoom.getHourlyRate());
+    }
+
+    @Test
     public void hasRoomName(){
         assertEquals("The White Room", conferenceRoom.getRoomName());
     }
