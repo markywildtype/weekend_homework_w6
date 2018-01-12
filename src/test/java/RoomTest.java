@@ -15,7 +15,7 @@ public class RoomTest {
 
     @Before
     public void before(){
-        room = new Room(2, 203);
+        room = new Room(2, 203, 2);
         guest = new Guest("Jim Matherson");
         guest2 = new Guest("Kirstyn Knowles");
     }

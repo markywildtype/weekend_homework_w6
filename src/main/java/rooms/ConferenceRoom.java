@@ -1,16 +1,16 @@
 package rooms;
 
+import clients.Guest;
+
 public class ConferenceRoom extends Room {
 
     private int hourlyRate;
     private String roomName;
-    private int capacity;
 
     public ConferenceRoom(int floor, int roomNumber, int hourlyRate, String roomName, int capacity) {
-        super(floor, roomNumber);
+        super(floor, roomNumber, capacity);
         this.hourlyRate = hourlyRate;
         this.roomName = roomName;
-        this.capacity = capacity;
     }
 
     public int getHourlyRate() {
@@ -24,4 +24,5 @@ public class ConferenceRoom extends Room {
     public int getCapacity() {
         return this.capacity;
     }
+
 }

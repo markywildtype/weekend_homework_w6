@@ -15,12 +15,12 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(3, 314, 55, Occupancy.SINGLE);
+        bedroom = new Bedroom(3, 314, 75, Occupancy.SINGLE);
     }
 
     @Test
     public void hasNightlyRate(){
-        assertEquals(55, bedroom.getNightlyRate());
+        assertEquals(75, bedroom.getNightlyRate());
     }
 
     @Test

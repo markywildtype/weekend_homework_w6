@@ -6,13 +6,12 @@ public class Bedroom extends Room {
 
     int nightlyRate;
     private Occupancy occupancy;
-    private int capacity;
 
     public Bedroom(int floor, int roomNumber, int nightlyRate, Occupancy occupancy) {
-        super(floor, roomNumber);
+        super(floor, roomNumber, occupancy.getCapacity());
         this.nightlyRate = nightlyRate;
         this.occupancy = occupancy;
-        this.capacity = occupancy.getCapacity();
+
     }
 
     public int getNightlyRate() {
@@ -27,18 +26,5 @@ public class Bedroom extends Room {
         return this.capacity;
     }
 
-
-    public void addGuest(Guest guest) {
-        if(guestsCheckedIn.size() < this.capacity)
-        this.guestsCheckedIn.add(guest);
-        occupy();
-    }
-
-    public void removeGuest(Guest guest) {
-        this.guestsCheckedIn.remove(guest);
-        if(guestsCheckedIn.size() == 0){
-            this.occupied = Occupied.UNOCCUPIED;
-        }
-    }
 }
 

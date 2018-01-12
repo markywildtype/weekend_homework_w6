@@ -9,11 +9,13 @@ public class Room {
     private int floor;
     private int roomNumber;
     protected Occupied occupied = Occupied.UNOCCUPIED;
-    protected ArrayList<Guest> guestsCheckedIn = new ArrayList<Guest>();
+    protected ArrayList<Guest> guestsCheckedIn = new ArrayList<>();
+    protected int capacity;
 
-    public Room(int floor, int roomNumber){
+    public Room(int floor, int roomNumber, int capacity){
         this.floor = floor;
         this.roomNumber = roomNumber;
+        this.capacity = capacity;
     }
 
     public int getFloor() {
@@ -33,12 +35,16 @@ public class Room {
     }
 
     public void addGuest(Guest guest) {
-        this.guestsCheckedIn.add(guest);
+        if(guestsCheckedIn.size() < this.capacity)
+            this.guestsCheckedIn.add(guest);
         occupy();
     }
 
     public void removeGuest(Guest guest) {
         this.guestsCheckedIn.remove(guest);
+        if(guestsCheckedIn.size() == 0){
+            this.occupied = Occupied.UNOCCUPIED;
+        }
     }
 
     public ArrayList<Guest> getGuestsCheckedIn() {
