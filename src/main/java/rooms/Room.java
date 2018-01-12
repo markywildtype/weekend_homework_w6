@@ -5,13 +5,12 @@ public class Room {
     private int floor;
     private int roomNumber;
     private int rate;
-    private Occupied occupied;
+    private Occupied occupied = Occupied.UNOCCUPIED;
 
     public Room(int floor, int roomNumber, int rate){
         this.floor = floor;
         this.roomNumber = roomNumber;
         this.rate = rate;
-        this.occupied = Occupied.UNOCCUPIED;
     }
 
 
