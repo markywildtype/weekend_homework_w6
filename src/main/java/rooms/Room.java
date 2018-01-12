@@ -1,10 +1,15 @@
 package rooms;
 
+import clients.Guest;
+
+import java.util.ArrayList;
+
 public class Room {
 
     private int floor;
     private int roomNumber;
     private Occupied occupied = Occupied.UNOCCUPIED;
+    private ArrayList<Guest> guestsCheckedIn = new ArrayList<Guest>();
 
     public Room(int floor, int roomNumber){
         this.floor = floor;
@@ -26,4 +31,18 @@ public class Room {
     public void occupy() {
         this.occupied = Occupied.OCCUPIED;
     }
+
+    public void addGuest(Guest guest) {
+        this.guestsCheckedIn.add(guest);
+        occupy();
+    }
+
+    public void removeGuest(Guest guest) {
+        this.guestsCheckedIn.remove(guest);
+    }
+
+    public ArrayList<Guest> getGuestsCheckedIn() {
+        return this.guestsCheckedIn;
+    }
+
 }
