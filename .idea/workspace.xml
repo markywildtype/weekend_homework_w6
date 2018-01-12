@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d4fe3b4-550a-43d9-9082-8d84bb83181b" name="Default" comment="Added addGuest and removeGuest methods to Room class.">
+    <list default="true" id="6d4fe3b4-550a-43d9-9082-8d84bb83181b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rooms/Room.java" afterPath="$PROJECT_DIR$/src/main/java/rooms/Room.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RoomTest.java" afterPath="$PROJECT_DIR$/src/test/java/RoomTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -764,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515759716313</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added addGuest and removeGuest methods to Room class.">
+      <created>1515760694022</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1515760694022</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
