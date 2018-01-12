@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+import rooms.Occupied;
 import rooms.Room;
 
 import static org.junit.Assert.assertEquals;
@@ -16,6 +17,16 @@ public class RoomTest {
     @Test
     public void roomHasFloor(){
         assertEquals(2, room.getFloor());
+    }
+
+    @Test
+    public void roomHasNumber(){
+        assertEquals(203, room.getRoomNumber());
+    }
+
+    @Test
+    public void roomStartsUnoccupied(){
+        assertEquals(Occupied.UNOCCUPIED, room.getOccupiedStatus());
     }
 
 }
