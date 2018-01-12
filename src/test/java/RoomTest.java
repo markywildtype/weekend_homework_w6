@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+import rooms.Occupancy;
 import rooms.Occupied;
 import rooms.Room;
 
