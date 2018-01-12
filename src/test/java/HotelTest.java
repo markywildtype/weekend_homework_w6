@@ -88,4 +88,5 @@ public class HotelTest {
         ArrayList guestList = hotel.listGuestsInRoom(bedroom);
         assertEquals(guest, guestList.get(0));
     }
+
 }
