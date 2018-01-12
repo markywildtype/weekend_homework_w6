@@ -2,6 +2,7 @@ import clients.Guest;
 import rooms.Bedroom;
 import rooms.ConferenceRoom;
 import rooms.DiningRoom;
+import rooms.Room;
 
 import java.util.ArrayList;
 
@@ -54,7 +55,11 @@ public class Hotel {
         return this.diningRooms;
     }
 
-    public void checkInGuestBedroom(Guest guest, Bedroom bedroom) {
-        bedroom.addGuest(guest);
+    public void checkInGuestRoom(Guest guest, Room room) {
+        room.addGuest(guest);
+    }
+
+    public ArrayList<Guest> listGuestsInRoom(Room room) {
+        return room.getGuestsCheckedIn();
     }
 }
