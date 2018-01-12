@@ -15,6 +15,11 @@ public class BedroomTest {
     }
 
     @Test
+    public void hasNightlyRate(){
+        assertEquals(55, bedroom.getNightlyRate());
+    }
+
+    @Test
     public void bedroomStartsUnoccupied(){
         assertEquals(Occupied.UNOCCUPIED, bedroom.getOccupiedStatus());
     }
