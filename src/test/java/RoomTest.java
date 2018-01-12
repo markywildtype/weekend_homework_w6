@@ -11,7 +11,7 @@ public class RoomTest {
 
     @Before
     public void before(){
-        room = new Room(2, 203);
+        room = new Room(2, 203, 80);
     }
 
     @Test
@@ -27,6 +27,17 @@ public class RoomTest {
     @Test
     public void roomStartsUnoccupied(){
         assertEquals(Occupied.UNOCCUPIED, room.getOccupiedStatus());
+    }
+
+    @Test
+    public void roomCanBeOccupied(){
+        room.occupy();
+        assertEquals(Occupied.OCCUPIED, room.getOccupiedStatus());
+    }
+
+    @Test
+    public void roomHasRate(){
+        assertEquals(80, room.getRate());
     }
 
 }
