@@ -55,11 +55,16 @@ public class Hotel {
         return this.diningRooms;
     }
 
-    public void checkInGuestRoom(Guest guest, Room room) {
+    public void checkInGuest(Guest guest, Room room) {
         room.addGuest(guest);
+    }
+
+    public void checkOutGuest(Guest guest, Room room) {
+        room.removeGuest(guest);
     }
 
     public ArrayList<Guest> listGuestsInRoom(Room room) {
         return room.getGuestsCheckedIn();
     }
+
 }

@@ -1,10 +1,7 @@
 import clients.Guest;
 import org.junit.Before;
 import org.junit.Test;
-import rooms.Bedroom;
-import rooms.ConferenceRoom;
-import rooms.DiningRoom;
-import rooms.Occupancy;
+import rooms.*;
 
 import java.util.ArrayList;
 
@@ -66,15 +63,28 @@ public class HotelTest {
     @Test
     public void canCheckInGuests(){
         hotel.addBedroom(bedroom);
-        hotel.checkInGuestRoom(guest, bedroom);
-        hotel.checkInGuestRoom(guest2, bedroom);
+        hotel.checkInGuest(guest, bedroom);
+        hotel.checkInGuest(guest2, bedroom);
         assertEquals(2, bedroom.getGuestsCheckedIn().size());
+    }
+
+    @Test
+    public void canCheckOutGuests(){
+        hotel.addConferenceRoom(conf1);
+        hotel.checkInGuest(guest, conf1);
+        hotel.checkInGuest(guest2, conf1);
+        assertEquals(2, conf1.getGuestsCheckedIn().size());
+        hotel.checkOutGuest(guest, conf1);
+        assertEquals(1, conf1.getGuestsCheckedIn().size());
+        hotel.checkOutGuest(guest2, conf1);
+        assertEquals(0, conf1.getGuestsCheckedIn().size());
+        assertEquals(Occupied.UNOCCUPIED, conf1.getOccupiedStatus());
     }
 
     @Test
     public void canListGuestsInRoom(){
         hotel.addBedroom(bedroom);
-        hotel.checkInGuestRoom(guest, bedroom);
+        hotel.checkInGuest(guest, bedroom);
         ArrayList guestList = hotel.listGuestsInRoom(bedroom);
         assertEquals(guest, guestList.get(0));
     }
