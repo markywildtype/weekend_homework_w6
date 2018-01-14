@@ -22,10 +22,6 @@ public class Booking {
         }
     }
 
-    public int getNightsBooked() {
-        return this.nightsBooked;
-    }
-
     public ArrayList<Guest> getGuestsBooked() {
         return this.guestsBooked;
     }
@@ -35,4 +31,9 @@ public class Booking {
             this.bedroom.addGuest(guest);
         }
     }
+
+    public int getNightsBooked() {
+        return this.nightsBooked;
+    }
+
 }

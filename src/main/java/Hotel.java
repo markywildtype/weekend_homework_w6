@@ -90,12 +90,12 @@ public class Hotel {
         booking.addGuestsToBooking(guest);
     }
 
-    public ArrayList<Booking> getBookings() {
-        return this.bookings;
-    }
-
     public void activateBooking(Booking booking) {
         booking.activateBooking();
+    }
+
+    public ArrayList<Booking> getBookings() {
+        return this.bookings;
     }
 }
 

@@ -14,7 +14,9 @@ public class Bedroom extends Room {
 
     }
 
-    public int getNightlyRate() { return this.nightlyRate; }
+    public int getNightlyRate() {
+        return this.nightlyRate;
+    }
 
     public void setNightlyRate(int newRate){
         this.nightlyRate = newRate;
