@@ -1,8 +1,5 @@
 import clients.Guest;
-import rooms.Bedroom;
-import rooms.ConferenceRoom;
-import rooms.DiningRoom;
-import rooms.Room;
+import rooms.*;
 
 import java.util.ArrayList;
 
@@ -65,6 +62,16 @@ public class Hotel {
 
     public ArrayList<Guest> listGuestsInRoom(Room room) {
         return room.getGuestsCheckedIn();
+    }
+
+    public ArrayList<Room> listVacantBedrooms() {
+        ArrayList<Room> vacantRooms = new ArrayList<>();
+        for(Room room : bedrooms){
+            if(room.getOccupiedStatus() == Occupied.UNOCCUPIED){
+                vacantRooms.add(room);
+            }
+        }
+        return vacantRooms;
     }
 
 }
