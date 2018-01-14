@@ -16,7 +16,6 @@ public class Booking {
         this.nightsBooked = nightsBooked;
     }
 
-
     public void addGuestsToBooking(Guest guest){
         if(guestsBooked.size() < bedroom.getOccupancyType().getCapacity()) {
             guestsBooked.add(guest);

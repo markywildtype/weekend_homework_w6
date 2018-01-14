@@ -61,14 +61,14 @@ public class BookingTest {
         assertEquals(Occupied.OCCUPIED, bedroom.getOccupiedStatus());
     }
 
-    //the following test should be in Hotel:
-
-    @Test
-    public void cannotDoubleBookRoom(){
-        booking.addGuestsToBooking(guest);
-        booking2 = new Booking(bedroom, 3);
-        assertEquals(5, booking.getNightsBooked());
-    }
+    //a version of the following test should be in Hotel:
+//
+//    @Test
+//    public void cannotDoubleBookRoom(){
+//        booking.addGuestsToBooking(guest);
+//        booking2 = new Booking(bedroom, 3);
+//        assertEquals(5, booking.getNightsBooked());
+//    }
 
 
 }

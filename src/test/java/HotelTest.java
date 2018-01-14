@@ -84,6 +84,15 @@ public class HotelTest {
     }
 
     @Test
+    public void canCheckOutAllGuests(){
+        hotel.addConferenceRoom(conf1);
+        hotel.checkInGuest(guest, conf1);
+        hotel.checkInGuest(guest2, conf1);
+        hotel.checkOutAllGuests(conf1);
+        assertEquals(0, conf1.getGuestsCheckedIn().size());
+    }
+
+    @Test
     public void canListGuestsInRoom(){
         hotel.addBedroom(bedroom);
         hotel.checkInGuest(guest, bedroom);
@@ -100,5 +109,27 @@ public class HotelTest {
         assertEquals(2, hotel.listVacantBedrooms().size());
     }
 
+    @Test
+    public void canCreateBooking(){
+        hotel.createBooking(bedroom, 5);
+        assertEquals(1, hotel.getBookings().size());
+    }
+
+    @Test
+    public void canAddGuestsToBooking(){
+        Booking booking = hotel.createBooking(bedroom, 3);
+        hotel.addGuestToBooking(guest, booking);
+        hotel.addGuestToBooking(guest2, booking);
+        assertEquals(2, hotel.getBookings().get(0).getGuestsBooked().size());
+    }
+
+    @Test
+    public void canActivateBooking(){
+        Booking booking = hotel.createBooking(bedroom, 3);
+        hotel.addGuestToBooking(guest, booking);
+        hotel.addGuestToBooking(guest2, booking);
+        hotel.activateBooking(booking);
+        assertEquals(2, bedroom.getGuestsCheckedIn().size());
+    }
 
 }

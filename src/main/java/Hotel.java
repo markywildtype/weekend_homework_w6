@@ -10,6 +10,7 @@ public class Hotel {
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
     private ArrayList<DiningRoom> diningRooms;
+    private ArrayList<Booking> bookings;
 
     public Hotel(String name, int floors){
         this.name = name;
@@ -18,6 +19,7 @@ public class Hotel {
         this.bedrooms = new ArrayList<>();
         this.conferenceRooms = new ArrayList<>();
         this.diningRooms = new ArrayList<>();
+        this.bookings = new ArrayList<>();
     }
 
     public String getName() {
@@ -60,6 +62,10 @@ public class Hotel {
         room.removeGuest(guest);
     }
 
+    public void checkOutAllGuests(Room room) {
+        room.removeAllGuests();
+    }
+
     public ArrayList<Guest> listGuestsInRoom(Room room) {
         return room.getGuestsCheckedIn();
     }
@@ -74,4 +80,22 @@ public class Hotel {
         return vacantRooms;
     }
 
+    public Booking createBooking(Bedroom bedroom, int nights){
+        Booking booking = new Booking(bedroom, nights);
+        this.bookings.add(booking);
+        return booking;
+    }
+
+    public void addGuestToBooking(Guest guest, Booking booking) {
+        booking.addGuestsToBooking(guest);
+    }
+
+    public ArrayList<Booking> getBookings() {
+        return this.bookings;
+    }
+
+    public void activateBooking(Booking booking) {
+        booking.activateBooking();
+    }
 }
+
