@@ -5,7 +5,7 @@ import clients.Guest;
 public class Bedroom extends Room {
 
     int nightlyRate;
-    private Occupancy occupancy;
+    protected Occupancy occupancy;
 
     public Bedroom(int floor, int roomNumber, int nightlyRate, Occupancy occupancy) {
         super(floor, roomNumber, occupancy.getCapacity());
@@ -14,9 +14,7 @@ public class Bedroom extends Room {
 
     }
 
-    public int getNightlyRate() {
-        return this.nightlyRate;
-    }
+    public int getNightlyRate() { return this.nightlyRate; }
 
     public void setNightlyRate(int newRate){
         this.nightlyRate = newRate;
