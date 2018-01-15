@@ -36,4 +36,8 @@ public class Booking {
         return this.nightsBooked;
     }
 
+    public int getPrice() {
+        int price = this.nightsBooked * bedroom.getNightlyRate();
+        return price;
+    }
 }

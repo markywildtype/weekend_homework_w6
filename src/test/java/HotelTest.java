@@ -116,6 +116,12 @@ public class HotelTest {
     }
 
     @Test
+    public void canGetBookingPrice(){
+        Booking booking = hotel.createBooking(bedroom, 5);
+        assertEquals(525, hotel.getBookingPrice(booking));
+    }
+
+    @Test
     public void canAddGuestsToBooking(){
         Booking booking = hotel.createBooking(bedroom, 3);
         hotel.addGuestToBooking(guest, booking);
@@ -131,5 +137,16 @@ public class HotelTest {
         hotel.activateBooking(booking);
         assertEquals(2, bedroom.getGuestsCheckedIn().size());
     }
+
+
+
+    //make a version of the following test:
+//
+//    @Test
+//    public void cannotDoubleBookRoom(){
+//        booking.addGuestsToBooking(guest);
+//        booking2 = new Booking(bedroom, 3);
+//        assertEquals(5, booking.getNightsBooked());
+//    }
 
 }

@@ -97,5 +97,9 @@ public class Hotel {
     public ArrayList<Booking> getBookings() {
         return this.bookings;
     }
+
+    public int getBookingPrice(Booking booking) {
+        return booking.getPrice();
+    }
 }
 
